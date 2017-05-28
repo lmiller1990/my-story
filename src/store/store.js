@@ -18,7 +18,7 @@ const state = {
   ]
 }
 
-const mutations = {
+export const mutations = {
   ADD_ROW (state) {
     let current = state.slides.filter(s => s.id === state.currentSlideId)[0]
     if (current) {
@@ -28,7 +28,7 @@ const mutations = {
   },
   REMOVE_ROW (state) {
     let current = state.slides.filter(s => s.id === state.currentSlideId)[0]
-    if (current) {
+    if (current && current.rows.length > 0) {
       current.rows.splice(-1, 1)
     }
   }
