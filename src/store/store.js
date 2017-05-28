@@ -5,7 +5,19 @@ Vue.use(Vuex)
 
 const state = {
   currentSlideId: 0,
-  slides: [{ id: 0, rows: [{ id: 0, columns: [] }] }]
+  slides: [
+    { id: 0,
+      rows: [
+        {
+          id: 0, columns: [{ id: 0 }, { id: 1 }]
+        },
+        {
+          id: 1,
+          columns: [{ id: 0 }]
+        }
+      ]
+    }
+  ]
 }
 
 export const mutations = {

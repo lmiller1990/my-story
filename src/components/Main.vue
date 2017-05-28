@@ -2,8 +2,6 @@
   <div class="container">
     <GridMenu />
     <Grid />
-
-    {{ $store.state.slides }}
    </div>
 </template>
 
