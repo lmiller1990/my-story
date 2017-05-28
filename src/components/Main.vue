@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <GridMenu />
     <Grid />
+    <GridMenu />
    </div>
 </template>
 

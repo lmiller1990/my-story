@@ -29,4 +29,9 @@ export default {
   width: 25em;
   border: 1px dotted grey;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+}
 </style>
