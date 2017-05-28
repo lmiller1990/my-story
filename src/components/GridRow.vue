@@ -22,12 +22,11 @@
 
 <style scoped>
 .row {
-  border: 2px dotted lightblue;
   display: flex;
 }
 
 .column {
-  background-color: pink;
+  border: 1px dotted purple;
   flex-grow: 1;
 }
 </style>

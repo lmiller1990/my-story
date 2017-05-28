@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <label>Rows</label>
-    <input type="number" @input="addRow" />
+    <div @click="addRow" class="add icon">+</div>
+    <div @click="removeRow" class="remove icon">-</div>
     <Row v-for="row in currentSlide.rows" :row="row" key="row.id" />
   </div>
 </template>
@@ -27,17 +28,18 @@ export default {
   },
 
   methods: {
-    addRow (evt) {
-      let val = evt.target.value < this.currentSlide.rows.length ? -1 : 1
-      if (val === -1) {
-        this.$store.commit('REMOVE_ROW')
-      } else {
-        this.$store.commit('ADD_ROW')
-      }
+    addRow () {
+      this.$store.commit('ADD_ROW')
+    },
+    removeRow () {
+      this.$store.commit('REMOVE_ROW')
     }
   }
 }
 </script>
 
 <style scoped>
+.icon { 
+  display: inline-block;
+}
 </style>

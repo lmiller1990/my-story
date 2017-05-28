@@ -3,7 +3,8 @@
     Row
     <div class="column input">
       <label>Columns</label>
-      <input type="number" @input="addColumn" />
+      <div @click="addColumn" class="add icon">+</div>
+      <div @click="removeColumn" class="remove icon">-</div>
     </div>
   </div>
 </template>
@@ -15,13 +16,11 @@ export default {
   props: ['row'],
 
   methods: {
-    addColumn (evt) {
-      let val = evt.target.value < this.row.columns.length ? -1 : 1
-      if (val === -1) {
-        this.$store.commit('REMOVE_COLUMN', this.row.id)
-      } else {
-        this.$store.commit('ADD_COLUMN', this.row.id)
-      }
+    addColumn () {
+      this.$store.commit('ADD_COLUMN', this.row.id)
+    },
+    removeColumn () {
+      this.$store.commit('REMOVE_COLUMN', this.row.id)
     }
   }
 }
@@ -31,5 +30,9 @@ export default {
 .column.input {
   display: inline-block;
   margin-left: 5em;
+}
+
+.icon {
+  display: inline-block;
 }
 </style>
