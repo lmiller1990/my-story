@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Row v-for="row in currentSlide.rows" key="row.id" />
+    
   </div>
 </template>
 

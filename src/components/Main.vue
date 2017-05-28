@@ -2,7 +2,9 @@
   <div class="container">
     <GridMenu />
     <Grid />
-  </div>
+
+    {{ $store.state.slides }}
+   </div>
 </template>
 
 <script>

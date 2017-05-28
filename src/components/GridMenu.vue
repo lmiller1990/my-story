@@ -2,6 +2,7 @@
   <div class="container">
     <label>Rows</label>
     <input type="number" @input="addRow" />
+    <Row v-for="row in currentSlide.rows" :row="row" key="row.id" />
   </div>
 </template>
 
