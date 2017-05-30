@@ -7,8 +7,10 @@
 </template>
 
 <script>
+  import Row from '@/components/Row'
   export default {
     name: 'GridRow',
+    components: { Row },
     props: {
       row: {
         type: Object,

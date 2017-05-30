@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <Grid />
     <GridMenu />
+    <Grid />
    </div>
 </template>
 
@@ -10,14 +10,11 @@ import GridMenu from '@/components/GridMenu'
 import Grid from '@/components/Grid'
 
 export default {
-  components: { GridMenu, Grid },
-
-  data () {
-    return {
-    }
-  }
+  components: { GridMenu, Grid }
 }
 </script>
 
 <style scoped>
+.container {
+}
 </style>

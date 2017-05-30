@@ -1,11 +1,8 @@
 <template>
-  <div class="container">
-    Row
-    <div class="column input">
-      <label>Columns</label>
-      <div @click="addColumn" class="add icon">+</div>
-      <div @click="removeColumn" class="remove icon">-</div>
-    </div>
+  <div class="column input">
+    <label>Columns</label>
+    <div @click="addColumn" class="add icon">+</div>
+    <div @click="removeColumn" class="remove icon">-</div>
   </div>
 </template>
 
@@ -28,8 +25,7 @@ export default {
 
 <style scoped>
 .column.input {
-  display: inline-block;
-  margin-left: 5em;
+  border: 1px dotted white;
 }
 
 .icon {

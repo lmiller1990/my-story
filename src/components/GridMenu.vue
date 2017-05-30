@@ -3,7 +3,6 @@
     <label>Rows</label>
     <div @click="addRow" class="add icon">+</div>
     <div @click="removeRow" class="remove icon">-</div>
-    <Row v-for="row in currentSlide.rows" :row="row" key="row.id" />
   </div>
 </template>
 

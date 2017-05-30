@@ -3,6 +3,9 @@
     <div class="slide">
       <GridRow v-for="row in currentSlide.rows" :row="row" key="row.id"/>
     </div>
+    <div class="row menu">
+      <Row v-for="row in currentSlide.rows" :row="row" key="row.id" />
+    </div>
   </div>
 </template>
 
@@ -27,7 +30,12 @@ export default {
 <style scoped>
 .slide {
   width: 25em;
-  border: 1px dotted grey;
+}
+
+.row.menu {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3em;
 }
 
 .container {
