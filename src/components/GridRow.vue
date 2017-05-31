@@ -1,22 +1,32 @@
 <template>
   <div class="row">
-    <div v-for="column in row.columns" class="column">
-        {{ column.id }}
-    </div>
+    <Column v-for="column in row.columns" :column="column" key="column.id" />
+    <!--<div class="column modifier">
+      <div @click="addColumn" class="add icon">+</div>
+      <div @click="removeColumn" class="remove icon">-</div>
+    </div>-->
   </div>
 </template>
 
 <script>
-  import Row from '@/components/Row'
+  import Column from '@/components/Column.vue'
   export default {
     name: 'GridRow',
-    components: { Row },
+    components: { Column },
     props: {
       row: {
         type: Object,
         default () {
           return { id: 0, columns: [] }
         }
+      }
+    },
+    methods: {
+      addColumn () {
+        this.$store.commit('ADD_COLUMN', this.row.id)
+      },
+      removeColumn () {
+        this.$store.commit('REMOVE_COLUMN', this.row.id)
       }
     }
   }
@@ -27,8 +37,11 @@
   display: flex;
 }
 
-.column {
-  border: 1px dotted purple;
-  flex-grow: 1;
+.icon {
+  display: inline-block;
+}
+
+.column.modifier {
+  margin-left: 2em;
 }
 </style>

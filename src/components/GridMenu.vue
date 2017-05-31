@@ -7,13 +7,10 @@
 </template>
 
 <script>
-import Row from '@/components/Row'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'Hello',
-
-  components: { Row },
 
   data () {
     return {
