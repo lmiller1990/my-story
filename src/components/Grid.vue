@@ -27,9 +27,9 @@ export default {
 .slide {
   width: 20em;
   height: 40em;
-  border: 1px dashed blue;
-  display: flex;
-  flex-direction: column;
+  /*border: 1px dashed blue;*/
+  display: grid;
+  justify-items: stretch;
 }
 
 .container {

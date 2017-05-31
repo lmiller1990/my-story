@@ -1,10 +1,10 @@
 <template>
   <div class="row">
     <Column v-for="column in row.columns" :column="column" key="column.id" />
-    <!--<div class="column modifier">
+    <div class="column modifier">
       <div @click="addColumn" class="add icon">+</div>
       <div @click="removeColumn" class="remove icon">-</div>
-    </div>-->
+    </div>
   </div>
 </template>
 
