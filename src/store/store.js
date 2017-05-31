@@ -6,14 +6,19 @@ Vue.use(Vuex)
 const state = {
   currentSlideId: 0,
   slides: [
-    { id: 0,
+    {
+      id: 0,
       rows: [
         {
-          id: 0, columns: [{ id: 0 }, { id: 1 }]
+          id: 0,
+          columns: [
+            { id: 0, msg: 'Hi!' },
+            { id: 1, msg: 'A long that msg with short words but long' }
+          ]
         },
         {
           id: 1,
-          columns: [{ id: 0 }]
+          columns: [{ id: 0, msg: 'Message' }]
         }
       ]
     }

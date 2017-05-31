@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .slide {
-  width: 20em;
+  width: 18em;
   height: 40em;
   /*border: 1px dashed blue;*/
   display: grid;
