@@ -54,12 +54,21 @@ export const mutations = {
       current.columns.splice(-1, 1)
     }
   },
-  SET_MODAL (state, {component, x, y}) {
+  SET_MODAL (state, {component, x, y, payload}) {
     state.currentModal = {
       component: component,
       x: x,
-      y: y
+      y: y,
+      payload: payload
     }
+  },
+  SET_COLUMN_TEXT (state, {rowId, columnId, text}) {
+    console.log(rowId, columnId, text)
+    let _col = state.slides[state.currentSlideId].rows
+      .filter(r => r.id === rowId)[0]
+      .columns.filter(c => c.id === columnId)[0]
+
+    _col.msg = text
   }
 }
 

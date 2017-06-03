@@ -21,6 +21,10 @@
       columnCount: {
         type: Number,
         default () { return 1 }
+      },
+      row: {
+        type: Object,
+        default () { return { id: 0 } }
       }
     },
     computed: {
@@ -30,11 +34,15 @@
     },
     methods: {
       showTextModal (evt) {
-        console.log(evt)
         this.$store.commit('SET_MODAL', {
           component: ColumnContextModal,
           x: 0,
-          y: 0
+          y: 0,
+          payload: {
+            columnId: this.column.id,
+            rowId: this.row.id,
+            text: this.column.msg
+          }
         })
       }
     }

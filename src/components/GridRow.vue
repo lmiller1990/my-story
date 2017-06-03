@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <Column v-for="column in row.columns" :columnCount="row.columns.length" :column="column" key="column.id" />
+    <Column v-for="column in row.columns" :columnCount="row.columns.length" :column="column" key="column.id" :row="row" />
     <div class="column modifier">
       <div @click="addColumn" class="add icon">+</div>
       <div @click="removeColumn" class="remove icon">-</div>
