@@ -68,6 +68,7 @@ export const mutations = {
       .filter(r => r.id === rowId)[0]
       .columns.filter(c => c.id === columnId)[0]
 
+    console.log(_col)
     _col.msg = text
   }
 }

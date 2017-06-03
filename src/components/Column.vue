@@ -1,6 +1,6 @@
 <template>
   <div :style="columnWidth" @click="showTextModal" class="column">
-    <div>
+    <div class="content">
       {{ column.id }} {{ column.msg }}
     </div>
   </div>
@@ -53,5 +53,9 @@
 .column {
   border: 1px dotted purple;
   flex-grow: 1;
+  display: flex;
+}
+
+.content {
 }
 </style>
