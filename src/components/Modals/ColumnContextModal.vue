@@ -1,8 +1,11 @@
 <template>
-  <div class="column modal container">
+  <div class="modal container">
     <div>
-      <div class="text form" contenteditable></div>
-      <button class="ok button" @click="close">Ok</button>
+      <div class="form container">
+        <div class="text form" contenteditable>
+        </div>
+        <button class="ok button" @click="save">Ok</button>
+      </div>
     </div>
   </div>
 </template>
@@ -19,7 +22,7 @@
       })
     },
     methods: {
-      close () {
+      save () {
         this.$store.commit('SET_COLUMN_TEXT', {
           text: this.$el.querySelector('.text.form').textContent,
           rowId: this.currentModal.payload.rowId,
@@ -36,7 +39,7 @@
 </script>
 
 <style scoped>
-.container {
+.modal.container {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -49,15 +52,20 @@
   justify-content: space-around;*/
 }
 
-.text.form {
-  background-color: white;
-  text-align: center;
+.form.container {
   margin-top: 30%;
   margin-left: 5%;
   margin-right: 5%;
+  background-color: white;
+}
+
+.text.form {
+  text-align: center;
 }
 
 .button {
-  background-color: grey;
+  border: 1px dotted grey;
+  background-color: white;
+  width: 100%;
 }
 </style>

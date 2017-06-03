@@ -22,6 +22,6 @@ describe('SET_MODAL', () => {
       store: { state: state }
     }).$mount()
 
-    expect(modalManager.$el.querySelector('.modal').textContent).to.equal('Enter text')
+    expect(modalManager.$el.querySelector('.modal').textContent.trim()).to.equal('Ok')
   })
 })

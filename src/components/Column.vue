@@ -1,6 +1,6 @@
 <template>
-  <div :style="columnWidth" class="column">
-    <div @click="showTextModal">
+  <div :style="columnWidth" @click="showTextModal" class="column">
+    <div>
       {{ column.id }} {{ column.msg }}
     </div>
   </div>
