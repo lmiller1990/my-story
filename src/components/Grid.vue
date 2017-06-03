@@ -30,6 +30,7 @@ export default {
   /*border: 1px dashed blue;*/
   display: grid;
   justify-items: stretch;
+  /*align-items: center;*/
 }
 
 .container {

@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+  currentModal: null,
   currentSlideId: 0,
   slides: [
     {
@@ -13,7 +14,7 @@ const state = {
           id: 0,
           columns: [
             { id: 0, msg: 'Hi!' },
-            { id: 1, msg: 'A long that msg with short words but long' }
+            { id: 1, msg: 'A long that msg with short words but long. That is why the row is growing in length instead of staying even.' }
           ]
         },
         {
@@ -51,6 +52,13 @@ export const mutations = {
     let current = state.slides.filter(s => s.id === state.currentSlideId)[0].rows.filter(r => r.id === rowId)[0]
     if (current && current.columns.length > 1) {
       current.columns.splice(-1, 1)
+    }
+  },
+  SET_MODAL (state, {component, x, y}) {
+    state.currentModal = {
+      component: component,
+      x: x,
+      y: y
     }
   }
 }
