@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div class="grid">
-      <div class="cell" v-for="(i, idx) in new Array(30)">
-        <div v-if="idx !== 15">
-          {{ idx }}
+    <div :style="rows" class="grid">
+      <div class="cell" v-for="i in cells">
+        <div v-if="i !== 15">
+          {{ i }}
         </div>
         <div v-else>
           {{ longText  }}
@@ -18,12 +18,23 @@
   export default {
     data () {
       return {
+        cells: [
+          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+        ],
         longText: 'This is some really long text to test what happens when the text is too large for a cell.'
       }
     },
     computed: {
       slide () {
         return this.$store.state.slides[0]
+      },
+      rows () {
+        let _d = 100 / 3
+        let _s = ''
+        for (let i = 0; i < 3; i++) {
+          _s += _d + '% '
+        }
+        return { 'grid-template-columns': _s }
       }
     }
   }
@@ -41,7 +52,7 @@
 .grid {
   display: grid;
   height: 100%;
-  grid-template-columns: 50% 50%; 
+  /*grid-template-columns: 50% 50%; */
 
 }
 </style>
