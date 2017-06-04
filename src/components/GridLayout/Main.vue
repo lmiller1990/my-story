@@ -1,16 +1,19 @@
 <template>
-  <div class="container">
-    <div :style="rows" class="grid">
-      <div class="cell" v-for="i in cells">
-        <div v-if="i !== 15">
-          {{ i }}
+  <div>
+    <div class="container">
+      <div :style="columnsByPercentage" class="grid">
+        <div class="cell" v-for="i in cells">
+          <div v-if="i !== 15">
+            {{ i }}
+          </div>
+          <div v-else>
+            {{ longText  }}
+          </div>
         </div>
-        <div v-else>
-          {{ longText  }}
-        </div>
-        
       </div>
     </div>
+    <input type="number" v-model="columns" />
+    <input type="number" v-model="rows" />
   </div>
 </template>
 
@@ -18,9 +21,8 @@
   export default {
     data () {
       return {
-        cells: [
-          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
-        ],
+        columns: 3,
+        rows: 3,
         longText: 'This is some really long text to test what happens when the text is too large for a cell.'
       }
     },
@@ -28,10 +30,13 @@
       slide () {
         return this.$store.state.slides[0]
       },
-      rows () {
-        let _d = 100 / 3
+      cells () {
+        return new Array(this.rows * this.columns)
+      },
+      columnsByPercentage () {
+        let _d = 100 / this.columns
         let _s = ''
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < this.columns; i++) {
           _s += _d + '% '
         }
         return { 'grid-template-columns': _s }
@@ -53,6 +58,5 @@
   display: grid;
   height: 100%;
   /*grid-template-columns: 50% 50%; */
-
 }
 </style>
