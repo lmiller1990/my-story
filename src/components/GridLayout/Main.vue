@@ -2,14 +2,7 @@
   <div>
     <div class="container">
       <div :style="columnsByPercentage" class="grid">
-        <div class="cell" v-for="i in cells">
-          <div v-if="i !== 15">
-            {{ i }}
-          </div>
-          <div v-else>
-            {{ longText  }}
-          </div>
-        </div>
+        <Cell class="cell" v-for="cell in cells" :cell="cell" key="cell.id" />
       </div>
     </div>
     <input type="number" v-model="columns" />
@@ -18,20 +11,24 @@
 </template>
 
 <script>
+  import Cell from '@/components/Cell'
   export default {
+    components: {
+      Cell
+    },
     data () {
       return {
         columns: 3,
-        rows: 3,
-        longText: 'This is some really long text to test what happens when the text is too large for a cell.'
+        rows: 3
       }
     },
     computed: {
-      slide () {
-        return this.$store.state.slides[0]
-      },
       cells () {
-        return new Array(this.rows * this.columns)
+        let arr = []
+        for (let c = 0; c < this.columns * this.rows; c++) {
+          arr.push({ id: c, text: `Cell no: ${c}` })
+        }
+        return arr
       },
       columnsByPercentage () {
         let _d = 100 / this.columns

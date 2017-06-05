@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <GridLayout />
-    <!--<ModalManager />
-    <GridMenu />
+    <ModalManager />
+    <!--<GridMenu />
     <Grid />-->
    </div>
 </template>
